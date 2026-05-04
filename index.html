@@ -38,6 +38,44 @@
                      <h3>Graphic Hoodie</h3> 
                      <p>KSh 1300</p>         
 
+                     <!-- Add to cart button --> 
+                      <button onclick="addToCart('Graphic Hoodie',1300)">Add to Cart</button>
+                     </div>
+                     
+                     <!-- Product Card 2 --> 
+                      <div class="card"> 
+                        <img src="crops.jpg">
+                         <h3>Basic Crop Top</h3>
+                          <p>KSh 650</p>
+                           <button onclick="addToCart('Basic Crop Top',650)">Add to Cart</button>
+
+                         </div>
+                         </section> 
+
+                         <!-- CONTACT SECTION --> 
+                          <section class="contact"> <h2>Contact</h2> 
+                            <p> 0702843589</p> 
+                            <p>stylecart@gmail.com</p> 
+                        </section> 
+
+                        <!-- CART SIDEBAR -->
+                          <div class="cart" id="cart"> 
+                            <h2>Your Cart</h2>
+
+                            <!-- Items will be added here dynamically -->
+                              <div id="cartItems"></div>
+
+                               <!-- Total price -->
+                                 <p id="total"></p> 
+
+                                 <!-- Checkout button --> 
+                                  <button onclick="showCheckout()">Checkout</button>
+                                 </div> 
+
+                                 <!-- CHECKOUT SIDEBAR -->
+                                   <div class="checkout" id="checkout">
+                                     <h2>Checkout</h2>
+
 
 
 
