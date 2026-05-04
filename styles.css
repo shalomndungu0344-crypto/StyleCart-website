@@ -64,4 +64,15 @@ header {
         display: none; 
     }
 
-    
+    /* Checkout sidebar */ 
+    .checkout { 
+        position: fixed; 
+        right: 0; 
+        top: 0; 
+        width: 300px; 
+        background: white; 
+        height: 100%; 
+        padding: 20px; 
+        display: none; 
+    }
+
