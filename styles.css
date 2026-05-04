@@ -18,3 +18,21 @@ header {
         text-decoration: none; 
         color: black; 
     }
+
+    /* Hero section */ 
+    .hero { 
+        text-align: center; 
+        padding: 50px; 
+    }
+    
+    /* Highlight text */ 
+    .hero span { 
+        color: pink; 
+    } 
+    
+    /* Product layout */ 
+    .products { 
+        display: flex; 
+        gap: 20px; 
+        justify-content: center; 
+    }
