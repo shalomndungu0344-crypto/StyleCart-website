@@ -36,3 +36,18 @@ header {
         gap: 20px; 
         justify-content: center; 
     }
+
+    /* Individual product card */ 
+    .card { 
+        background: white; 
+        padding: 15px; 
+        border-radius: 10px; 
+    } 
+    
+    /* Buttons */ 
+    button { 
+        background: pink; 
+        border: none; 
+        padding: 10px; 
+        cursor: pointer; 
+    }
