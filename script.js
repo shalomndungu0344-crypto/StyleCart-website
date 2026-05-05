@@ -33,3 +33,18 @@ function showCart() {
     // Display total 
     document.getElementById("total").textContent = "Total: KSh " + total; 
 }
+
+// FUNCTION: Show checkout 
+function showCheckout() { 
+    document.getElementById("checkout").style.display = "block"; 
+} 
+
+// FUNCTION: Handle form submission 
+function placeOrder(event) { 
+    event.preventDefault(); // stop reload
+    
+    alert("Order placed successfully!"); 
+    
+    // Clear cart 
+    localStorage.removeItem("cart");
+}
