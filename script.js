@@ -20,4 +20,16 @@ function showCart() {
     cartItems.innerHTML = ""; // clear old items 
     let total = 0;
 
+    // Loop through cart items 
+    cart.forEach(item => { 
+        let p = document.createElement("p"); 
+        
+        // Display item 
+        p.textContent = item.name + " - KSh " + item.price; 
+        cartItems.appendChild(p); 
+        total += item.price; 
+    }); 
     
+    // Display total 
+    document.getElementById("total").textContent = "Total: KSh " + total; 
+}
