@@ -12,3 +12,12 @@ function addToCart(name, price) {
   // Show updated cart 
   showCart(); 
 }
+// FUNCTION: Display cart 
+function showCart() { 
+    // Make cart visible 
+    document.getElementById("cart").style.display = "block"; 
+    let cartItems = document.getElementById("cartItems"); 
+    cartItems.innerHTML = ""; // clear old items 
+    let total = 0;
+
+    
