@@ -1,92 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StyleCart - Home</title>
-    <!-- Link to CSS -->
-      <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StyleCart</title>
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header> 
-        <h1>StyleCart</h1>
-         <!-- Navigation links to all pages --> 
-          <nav>
-             <a href="index.html">Home</a>
-              <a href="femme.html">Femme Fierce</a>
-               <a href="gent.html">Gent Swagger</a> 
-               <a href="about.html">About</a> 
-               <a href="contact.html">Contact</a> 
 
-               <!-- Cart button triggers cart display -->
-                 <button onclick="showCart()">Cart🛒</button>
-                 </nav> 
-                </header>
+<header>
+  <h1>StyleCart</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="femme.html">Femme Fierce</a>
+    <a href="gent.html">Gent Swagger</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button onclick="showCart()">cart🛒</button>
+  </nav>
+</header>
 
-                <!-- HERO SECTION --> 
-                 <section class="hero">
-                     <h2>Look Good. <span>Feel Confident.</span></h2>
-                      <p>Affordable prices. Made for you.</p>
-                     </section>
+<section class="hero">
+  <h2>Look Good. <span>Feel Confident.</span></h2>
+  <p>Affordable styles under KSh 2000</p>
+</section>
 
-            <!-- PRODUCTS SECTION --> 
-             <section class="products"> 
-                
-                <!-- Product Card 1 --> 
-                 <div class="card">
-                     <img src="Graphic Hoodie.jpg"
-                     <h3>Graphic Hoodie</h3> 
-                     <p>KSh 1300</p>         
+<section class="products">
 
-                     <!-- Add to cart button --> 
-                      <button onclick="addToCart('Graphic Hoodie',1300)">Add to Cart</button>
-                     </div>
-                     
-                     <!-- Product Card 2 --> 
-                      <div class="card"> 
-                        <img src="crops.jpg">
-                         <h3>Basic Crop Top</h3>
-                          <p>KSh 650</p>
-                           <button onclick="addToCart('Basic Crop Top',650)">Add to Cart</button>
+  <div class="card">
+    <img src="Graphic Hoodie.jpg">
+    <h3>Graphic Hoodie</h3>
+    <p>KSh 1300</p>
+    <button onclick="addToCart('Graphic Hoodie',1300)">Add to Cart</button>
+  </div>
 
-                         </div>
-                         </section> 
+  <div class="card">
+    <img src="crops.jpg">
+    <h3>Basic Crop Top</h3>
+    <p>KSh 650</p>
+    <button onclick="addToCart('Basic Crop Top',650)">Add to Cart</button>
+  </div>
 
-                         <!-- CONTACT SECTION --> 
-                          <section class="contact"> <h2>Contact</h2> 
-                            <p> 0712345678</p> 
-                            <p>stylecart@gmail.com</p> 
-                        </section> 
+</section>
 
-                        <!-- CART SIDEBAR -->
-                          <div class="cart" id="cart"> 
-                            <h2>Your Cart</h2>
+<section class="contact">
+  <h2>Contact</h2>
+  <p>📞 0712345678</p>
+  <p> stylecart@gmail.com</p>
+</section>
 
-                            <!-- Items will be added here dynamically -->
-                              <div id="cartItems"></div>
+<!-- CART -->
+<div class="cart" id="cart">
+  <h2>Your Cart</h2>
+  <div id="cart"></div>
+  <p id="total"></p>
+  <button onclick="showCheckout()">Checkout</button>
+</div>
 
-                               <!-- Total price -->
-                                 <p id="total"></p> 
-
-                                 <!-- Checkout button --> 
-                                  <button onclick="showCheckout()">Checkout</button>
-                                 </div> 
-
-                                 <!-- CHECKOUT SIDEBAR -->
-                                   <div class="checkout" id="checkout">
-                                     <h2>Checkout</h2>
-
-<!-- Form -->
-  <form onsubmit="placeOrder(event)"> 
-    <input type="text" placeholder="Full Name" required> 
+<!-- CHECKOUT -->
+<div class="checkout" id="checkout">
+  <h2>Checkout</h2>
+  <form onsubmit="placeOrder(event)">
+    <input type="text" placeholder="Full Name" required>
     <input type="text" placeholder="Phone Number" required>
-     <input type="text" placeholder="Address" required>
-      <button type="submit">Place Order</button> 
-    </form>
- </div> 
+    <input type="text" placeholder="Address" required>
+    <button type="submit">Place Order</button>
+  </form>
+</div>
 
- <!-- Link JavaScript --> 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
