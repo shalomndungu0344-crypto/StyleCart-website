@@ -1,4 +1,3 @@
-SHOPPING WEBSITE
 ## Project Name
 
 StyleCart-Website
