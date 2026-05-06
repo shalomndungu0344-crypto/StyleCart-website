@@ -2,31 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>StyleCart</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <header>
   <h1>StyleCart</h1>
   <nav>
-    <a href="index.html">Home</a>
+    <a href="#">Home</a>
     <a href="femme.html">Femme Fierce</a>
     <a href="gent.html">Gent Swagger</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <button onclick="showCart()">cart🛒</button>
+    <button id="cartButton">cart</button>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <h2>Look Good. <span>Feel Confident.</span></h2>
-  <p>Affordable styles under KSh 2000</p>
+  <p>Budget friendly prices. Made for you.</p>
 </section>
 
-<section class="products">
+<!-- PRODUCTS -->
+<section class="products" id="products">
 
   <div class="card">
     <img src="Graphic Hoodie.jpg">
@@ -37,20 +39,21 @@
 
   <div class="card">
     <img src="crops.jpg">
-    <h3>Basic Crop Top</h3>
+    <h3>Crop Top</h3>
     <p>KSh 650</p>
-    <button onclick="addToCart('Basic Crop Top',650)">Add to Cart</button>
+    <button onclick="addToCart('Crop Top',650)">Add to Cart</button>
   </div>
 
 </section>
 
+<!-- CONTACT -->
 <section class="contact">
   <h2>Contact</h2>
-  <p>0712345678</p>
-  <p> stylecart@gmail.com</p>
+  <p> 0712345678</p>
+  <p>stylecart@gmail.com</p>
 </section>
 
-<!-- CART -->
+<!-- CART  -->
 <div class="cart" id="cart">
   <h2>Your Cart</h2>
   <div id="cartItems"></div>
@@ -61,19 +64,18 @@
 <!-- CHECKOUT -->
 <div class="checkout" id="checkout">
   <h2>Checkout</h2>
-<div class="checkout" id="checkout">
-  <h2>M-Pesa Checkout</h2>
-
-  <form onsubmit="mpesaPayment(event)">
-    <input type="text" id="phone" placeholder="Enter M-Pesa Number (07...)" required>
-
-    <button type="submit">Pay with M-Pesa</button>
+  <form onsubmit="placeOrder(event)">
+    
+    <label for="name">name</label>
+    <input type="text" id="name" name="name" required>
+    <label for="number">phone</label>
+    <input type="number" id="phone" name="phone" required>
+    <label for="email">email</label>
+    <input type="text" id="email" name="email" required>
+    <button type="submit">Place Order</button>
   </form>
-
-  <p id="mpesaStatus"></p>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
