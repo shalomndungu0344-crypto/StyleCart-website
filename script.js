@@ -48,9 +48,15 @@ function showCheckout() {
 // FUNCTION: Handle form submission
 function placeOrder(event) {
   event.preventDefault(); // stop reload
+  localStorage.setItem("orderPlaced", "true");
+  alert("Order placed successfully will be delivered to your address!");
 
-  alert("Order placed successfully!");
-
+// FUNCTION: reset button
+function resetOrder() {
+  cart = [];
+  localStorage.removeItem("cart");
+  location.reload();
+}
   // Clear cart
   localStorage.removeItem("cart");
 }
