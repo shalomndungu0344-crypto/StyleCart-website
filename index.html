@@ -53,7 +53,7 @@
 <!-- CART -->
 <div class="cart" id="cart">
   <h2>Your Cart</h2>
-  <div id="cart"></div>
+  <div id="cartItems"></div>
   <p id="total"></p>
   <button onclick="showCheckout()">Checkout</button>
 </div>
@@ -61,12 +61,16 @@
 <!-- CHECKOUT -->
 <div class="checkout" id="checkout">
   <h2>Checkout</h2>
-  <form onsubmit="placeOrder(event)">
-    <input type="text" placeholder="Full Name" required>
-    <input type="text" placeholder="Phone Number" required>
-    <input type="text" placeholder="Address" required>
-    <button type="submit">Place Order</button>
+<div class="checkout" id="checkout">
+  <h2>M-Pesa Checkout</h2>
+
+  <form onsubmit="mpesaPayment(event)">
+    <input type="text" id="phone" placeholder="Enter M-Pesa Number (07...)" required>
+
+    <button type="submit">Pay with M-Pesa</button>
   </form>
+
+  <p id="mpesaStatus"></p>
 </div>
 
 <script src="script.js"></script>
