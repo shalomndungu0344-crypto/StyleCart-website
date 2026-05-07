@@ -20,6 +20,10 @@ header {
   padding: 15px;
   background: white;
 }
+.page-title {
+  text-align: center;
+  margin: 20px 0;
+}
 
 /* Navigation links */
 nav a {
