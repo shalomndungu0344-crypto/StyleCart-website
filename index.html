@@ -1,132 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>StyleCart</title>
+    <title>StyleCart</title>
 
-<!-- External CSS file -->
-<link rel="stylesheet" href="styles.css">
-</head>
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body>
+    <!-- HEADER / NAVBAR -->
+    <header>
+      <h1>StyleCart</h1>
 
-<!-- HEADER / NAVBAR -->
-<header>
-  <h1>StyleCart</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="femme.html">Femme Fierce</a>
+        <a href="gent.html">Gent Swagger</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="femme.html">Femme Fierce</a>
-    <a href="gent.html">Gent Swagger</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <!-- Profile image -->
+        <div class="hero-image">
+          <img src="profile.jpg" alt="Profile image" />
+        </div>
 
-<main>
+        <!-- Hero text -->
+        <div class="hero-text">
+          <h2>Look Good. <span>Feel Confident.</span></h2>
+          <p>Budget friendly prices. Made for you.</p>
+          <p>We deliver to your doorstep.</p>
+          <p>Payment is on delivery — we got you covered.</p>
+        </div>
+      </section>
 
-<!-- HERO SECTION -->
-<section class="hero">
+      <!-- PRODUCTS SECTION -->
+      <section class="products" id="products">
+        <div class="card">
+          <img src="Graphic Hoodie.jpg" alt="Graphic Hoodie" />
+          <h3>Graphic Hoodie</h3>
+          <p>KSh 1300</p>
+          <button onclick="addToCart('Graphic Hoodie', 1300)">
+            Add to Cart
+          </button>
+        </div>
 
-  <!-- Profile image -->
-  <div class="hero-image">
-    <img src="profile.jpg" alt="Profile image">
-  </div>
+        <div class="card">
+          <img src="crops.jpg" alt="Crop Top" />
+          <h3>Crop Top</h3>
+          <p>KSh 650</p>
+          <button onclick="addToCart('Crop Top', 650)">Add to Cart</button>
+        </div>
+      </section>
 
-  <!-- Hero text -->
-  <div class="hero-text">
-    <h2>Look Good. <span>Feel Confident.</span></h2>
-    <p>Budget friendly prices. Made for you.</p>
-    <p>We deliver to your doorstep.</p>
-    <p>Payment is on delivery — we got you covered.</p>
-  </div>
+      <!-- CONTACT SECTION -->
+      <section class="contact">
+        <h2>Contact</h2>
+        <p>0712345678</p>
+        <p>stylecart@gmail.com</p>
+      </section>
 
-</section>
+      <!-- CART PANEL -->
+      <div class="cart" id="cart">
+        <h2>Your Cart</h2>
 
-<!-- PRODUCTS SECTION -->
-<section class="products" id="products">
+        <!-- Items will be added dynamically -->
+        <div id="cartItems"></div>
 
-  <div class="card">
-    <img src="Graphic Hoodie.jpg" alt="Graphic Hoodie">
-    <h3>Graphic Hoodie</h3>
-    <p>KSh 1300</p>
-    <button onclick="addToCart('Graphic Hoodie',1300)">Add to Cart</button>
-  </div>
+        <!-- Total price -->
+        <p id="total"></p>
 
-  <div class="card">
-    <img src="crops.jpg" alt="Crop Top">
-    <h3>Crop Top</h3>
-    <p>KSh 650</p>
-    <button onclick="addToCart('Crop Top',650)">Add to Cart</button>
-  </div>
+        <!-- Open checkout -->
+        <button onclick="showCheckout()">Checkout</button>
+      </div>
 
-</section>
+      <!-- CHECKOUT PANEL -->
+      <div class="checkout" id="checkout">
+        <h2>Checkout</h2>
 
-<!-- CONTACT SECTION -->
-<section class="contact">
-  <h2>Contact</h2>
-  <p>0712345678</p>
-  <p>stylecart@gmail.com</p>
-</section>
+        <form onsubmit="placeOrder(event)">
+          <label>Name</label>
+          <input type="text" id="name" required />
 
-<!-- CART PANEL -->
-<div class="cart" id="cart">
-  <h2>Your Cart</h2>
+          <label>Phone</label>
+          <input type="number" id="phone" required />
 
-  <!-- Items will be added dynamically -->
-  <div id="cartItems"></div>
+          <label>Email</label>
+          <input type="text" id="email" required />
 
-  <!-- Total price -->
-  <p id="total"></p>
+          <label>Address</label>
+          <input type="text" id="address" required />
 
-  <!-- Open checkout -->
-  <button onclick="showCheckout()">Checkout</button>
-</div>
+          <!-- Submit order -->
+          <button type="submit">Place Order</button>
 
-<!-- CHECKOUT PANEL -->
-<div class="checkout" id="checkout">
-  <h2>Checkout</h2>
+          <!-- FIXED: correct function name + prevent form submit bug -->
+          <button type="button" onclick="resetOrder()">Reset Order</button>
+        </form>
+      </div>
+    </main>
 
-  <form onsubmit="placeOrder(event)">
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <h3>StyleCart</h3>
+        <p>Your one-stop destination for trendy and affordable fashion.</p>
+        <p class="copyright">© 2026 StyleCart. All rights reserved.</p>
+      </div>
+    </footer>
 
-    <label>Name</label>
-    <input type="text" id="name" required>
-
-    <label>Phone</label>
-    <input type="number" id="phone" required>
-
-    <label>Email</label>
-    <input type="text" id="email" required>
-
-    <label>Address</label>
-    <input type="text" id="address" required>
-
-    <!-- Submit order -->
-    <button type="submit">Place Order</button>
-
-    <!-- FIXED: correct function name + prevent form submit bug -->
-    <button type="button" onclick="resetOrder()">Reset Order</button>
-
-  </form>
-</div>
-
-</main>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-content">
-    <h3>StyleCart</h3>
-    <p>Your one-stop destination for trendy and affordable fashion.</p>
-    <p class="copyright">
-      © 2026 StyleCart. All rights reserved.
-    </p>
-  </div>
-</footer>
-
-<!-- JavaScript file -->
-<script src="script.js"></script>
-
-</body>
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+  </body>
 </html>
