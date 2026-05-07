@@ -39,9 +39,7 @@ The main purpose of StyleCart is to demonstrate how a basic shopping system work
 | User Action        | Input                        | Expected Behavior              | Output                          |
 |--------------------|-----------------------------|--------------------------------|---------------------------------|
 | View products      | Open website                | Products are displayed         | Clothing items appear on page   |
-| Add item to cart   | Click "Add to Cart" button  | Item is stored in cart        | Cart updates with selected item |
-| View cart          | Click cart icon             | Cart opens                    | List of added items is shown    |
-| Remove item        | Click remove button         | Item is deleted from cart     | Cart updates instantly          |
+| Add item to cart   | Click "Add to Cart" button  | Item is stored in cart        | Cart updates with selected item and the cart pops out |
 | Checkout           | Click "Place Order"         | Checkout form appears         | User enters details             |
 | Submit order       | Fill form and submit        | Order is processed            | Confirmation / cart clears      |
 
