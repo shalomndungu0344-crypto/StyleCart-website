@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gent Swagger</title>
+
+    <!-- External CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+    <!-- Header section with navigation -->
     <header> 
         <h1>StyleCart</h1> 
+
         <nav> 
             <a href="index.html">Home</a> 
             <a href="femme.html">Femme Fierce</a> 
@@ -18,69 +24,97 @@
         </nav> 
     </header>
 
-    <h2 style="text-align:center;">Gent Swagger </h2> 
+    <!-- Page title -->
+    <h2 style="text-align:center;">Gent Swagger</h2> 
+
+    <!-- Products section -->
     <section class="products"> 
+
         <div class="card"> 
-            <img src="hoodie.jpg"> 
+            <img src="hoodie.jpg" alt="Hoodie"> 
             <h3>Hoodie</h3> 
             <p>KSh 1300</p> 
             <button onclick="addToCart('Hoodie',1300)">Add to Cart</button> 
         </div> 
-        
+
         <div class="card"> 
-            <img src="sneakers.jpg"> 
+            <img src="sneakers.jpg" alt="Sneakers"> 
             <h3>Sneakers</h3> 
             <p>KSh 2000</p> 
             <button onclick="addToCart('Sneakers',2000)">Add to Cart</button> 
         </div> 
-         <div class="card"> 
-            <img src="Beanie.jpg"> 
+
+        <div class="card"> 
+            <img src="Beanie.jpg" alt="Beanie"> 
             <h3>Beanie</h3> 
             <p>KSh 700</p> 
             <button onclick="addToCart('Beanie',700)">Add to Cart</button> 
         </div>  
+
         <div class="card"> 
-            <img src="pants.jpg"> 
+            <img src="pants.jpg" alt="Pants"> 
             <h3>Pants</h3> 
             <p>KSh 1700</p> 
             <button onclick="addToCart('Pants',1700)">Add to Cart</button> 
         </div> 
+
     </section>
-    <!-- CART  -->
-<div class="cart" id="cart">
-  <h2>Your Cart</h2>
-  <div id="cartItems"></div>
-  <p id="total"></p>
-  <button onclick="showCheckout()">Checkout</button>
-</div>
 
-<!-- CHECKOUT -->
-<div class="checkout" id="checkout">
-  <h2>Checkout</h2>
-  <form onsubmit="placeOrder(event)">
-    
-    <label for="name">name</label>
-    <input type="text" id="name" name="name" required>
-    <label for="number">phone</label>
-    <input type="number" id="phone" name="phone" required>
-    <label for="email">email</label>
-    <input type="text" id="email" name="email" required>
-    <label for="address">address</label>
-    <input type="text" id="address" name="address" required>
+    <!-- CART SECTION -->
+    <div class="cart" id="cart">
+        <h2>Your Cart</h2>
 
-    <button type="submit">Place Order</button>
-    <button onclick="resetOder()">reset oder</button>
+        <!-- Cart items injected by JavaScript -->
+        <div id="cartItems"></div>
 
-  </form>
-</div>
- <footer>
-    <div class="footer-content">
-        <h3>StyleCart</h3>
-        <p>Your one-stop destination for trendy and affordable fashion.</p>
-        <p class="copyright">
-            © 2026 StyleCart. All rights reserved.
-        </p>
+        <!-- Total price display -->
+        <p id="total"></p>
+
+        <!-- Open checkout -->
+        <button onclick="showCheckout()">Checkout</button>
     </div>
+
+    <!-- CHECKOUT SECTION -->
+    <div class="checkout" id="checkout">
+        <h2>Checkout</h2>
+
+        <!-- Order form -->
+        <form onsubmit="placeOrder(event)">
+
+            <label>Name</label>
+            <input type="text" id="name" required>
+
+            <label>Phone</label>
+            <input type="number" id="phone" required>
+
+            <label>Email</label>
+            <input type="text" id="email" required>
+
+            <label>Address</label>
+            <input type="text" id="address" required>
+
+            <!-- Submit order -->
+            <button type="submit">Place Order</button>
+
+            <!-- FIXED: correct function + prevent form submit issue -->
+            <button type="button" onclick="resetOrder()">Reset Order</button>
+
+        </form>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-content">
+            <h3>StyleCart</h3>
+            <p>Your one-stop destination for trendy and affordable fashion.</p>
+            <p class="copyright">
+                © 2026 StyleCart. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript file  -->
     <script src="script.js"></script>
+
 </body>
 </html>

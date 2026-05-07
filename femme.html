@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FemmeFierce</title>
+
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+    <!-- Website header and navigation -->
     <header> 
         <h1>StyleCart</h1> 
+
         <nav> 
             <a href="index.html">Home</a> 
             <a href="femme.html">Femme Fierce</a> 
@@ -18,71 +24,98 @@
         </nav> 
     </header>
 
-    <h2 style="text-align:center;">Femme Fierce </h2> 
-    
+    <!-- Page heading -->
+    <h2 style="text-align:center;">Femme Fierce</h2> 
+
+    <!-- Products section -->
     <section class="products"> 
+
+        <!-- Product card -->
         <div class="card"> 
-            <img src="pink dress.jpg"> 
+            <img src="pink dress.jpg" alt="Pink Dress"> 
             <h3>Pink Dress</h3> 
             <p>KSh 1200</p> 
             <button onclick="addToCart('Pink Dress',1200)">Add to Cart</button> 
         </div> 
-        
+
         <div class="card"> 
-            <img src="heels.jpg"> 
+            <img src="heels.jpg" alt="Heels"> 
             <h3>Heels</h3> 
             <p>KSh 1000</p> 
             <button onclick="addToCart('Heels',1000)">Add to Cart</button> 
         </div> 
 
         <div class="card">
-            <img src="coach.jpg">
-            <h3>coach bag</h3>
+            <img src="coach.jpg" alt="Coach Bag">
+            <h3>Coach Bag</h3>
             <p>KSh 1800</p> 
-            <button onclick="addToCart('coach bag',1800)">Add to Cart</button> 
+            <button onclick="addToCart('Coach Bag',1800)">Add to Cart</button> 
         </div>
-         <div class="card">
-            <img src="crocks.jpg">
-            <h3>cute crocks</h3>
+
+        <div class="card">
+            <img src="crocks.jpg" alt="Crocs">
+            <h3>Cute Crocs</h3>
             <p>KSh 800</p> 
-            <button onclick="addToCart('cute crocks',800)">Add to Cart</button> 
-         </div>
+            <button onclick="addToCart('Cute Crocs',800)">Add to Cart</button> 
+        </div>
+
     </section>
-    <!-- CART  -->
-<div class="cart" id="cart">
-  <h2>Your Cart</h2>
-  <div id="cartItems"></div>
-  <p id="total"></p>
-  <button onclick="showCheckout()">Checkout</button>
-</div>
 
-<!-- CHECKOUT -->
-<div class="checkout" id="checkout">
-  <h2>Checkout</h2>
-  <form onsubmit="placeOrder(event)">
-    
-    <label for="name">name</label>
-    <input type="text" id="name" name="name" required>
-    <label for="number">phone</label>
-    <input type="number" id="phone" name="phone" required>
-    <label for="email">email</label>
-    <input type="text" id="email" name="email" required>
-    <label for="address">address</label>
-    <input type="text" id="address" name="address" required>
+    <!-- CART PANEL -->
+    <div class="cart" id="cart">
+        <h2>Your Cart</h2>
 
-    <button type="submit">Place Order</button>
-    <button onclick="resetOder()">reset oder</button>
+        <!-- Cart items will be injected here using JS -->
+        <div id="cartItems"></div>
 
-  </form>
-</div>
- <footer>
-    <div class="footer-content">
-        <h3>StyleCart</h3>
-        <p>Your one-stop destination for trendy and affordable fashion.</p>
-        <p class="copyright">
-            © 2026 StyleCart. All rights reserved.
-        </p>
+        <!-- Total price display -->
+        <p id="total"></p>
+
+        <!-- Open checkout panel -->
+        <button onclick="showCheckout()">Checkout</button>
     </div>
-     <script src="script.js"></script>
+
+    <!-- CHECKOUT PANEL -->
+    <div class="checkout" id="checkout">
+        <h2>Checkout</h2>
+
+        <!-- Order form -->
+        <form onsubmit="placeOrder(event)">
+
+            <label>Name</label>
+            <input type="text" id="name" required>
+
+            <label>Phone</label>
+            <input type="number" id="phone" required>
+
+            <label>Email</label>
+            <input type="text" id="email" required>
+
+            <label>Address</label>
+            <input type="text" id="address" required>
+
+            <!-- Submit order -->
+            <button type="submit">Place Order</button>
+
+            <!-- Reset cart safely (no form submit trigger) -->
+            <button type="button" onclick="resetOrder()">Reset Order</button>
+
+        </form>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-content">
+            <h3>StyleCart</h3>
+            <p>Your one-stop destination for trendy and affordable fashion.</p>
+            <p class="copyright">
+                © 2026 StyleCart. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript file (placed correctly at end of body) -->
+    <script src="script.js"></script>
+
 </body>
 </html>

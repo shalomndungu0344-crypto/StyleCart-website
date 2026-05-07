@@ -1,68 +1,73 @@
-// Retrieve cart from localStorage OR create empty array
+// Retrieve cart from localStorage or start with empty array
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// FUNCTION: Add item to cart
+// Add item to cart
 function addToCart(name, price) {
-  // Add item as object
   cart.push({ name, price });
 
   // Save updated cart
   localStorage.setItem("cart", JSON.stringify(cart));
 
-  // Show updated cart
+  // Update cart display
   showCart();
 }
 
-// FUNCTION: Display cart
+// Display cart items and total
 function showCart() {
-  // Make cart visible
   document.getElementById("cart").style.display = "block";
 
   let cartItems = document.getElementById("cartItems");
-  cartItems.innerHTML = ""; // clear old items
+  cartItems.innerHTML = "";
 
   let total = 0;
 
-  // Loop through cart items
   cart.forEach((item, index) => {
     let p = document.createElement("p");
 
     p.innerHTML = `
-        ${item.name} - KSh ${item.price}
-        <button onclick="removeItem(${index})">remove</button>
+      ${item.name} - KSh ${item.price}
+      <button onclick="removeItem(${index})">remove</button>
     `;
 
     cartItems.appendChild(p);
     total += item.price;
   });
 
-  // Display total
   document.getElementById("total").textContent = "Total: KSh " + total;
 }
 
-// FUNCTION: Show checkout
+// Show checkout section
 function showCheckout() {
   document.getElementById("checkout").style.display = "block";
 }
 
-// FUNCTION: Handle form submission
+// Place order and clear cart
 function placeOrder(event) {
-  event.preventDefault(); // stop reload
+  event.preventDefault();
+
   localStorage.setItem("orderPlaced", "true");
+
   alert("Order placed successfully will be delivered to your address!");
 
-// FUNCTION: reset button
+  cart = [];
+  localStorage.removeItem("cart");
+
+  showCart();
+}
+
+// Reset everything
 function resetOrder() {
   cart = [];
   localStorage.removeItem("cart");
+
   location.reload();
 }
-  // Clear cart
-  localStorage.removeItem("cart");
-}
-// REMOVE ITEM FUNCTION
+
+// Remove single item from cart
 function removeItem(index) {
-  cart.splice(index, 1); // remove item
+  cart.splice(index, 1);
+
   localStorage.setItem("cart", JSON.stringify(cart));
-  showCart(); // refresh display
+
+  showCart();
 }
